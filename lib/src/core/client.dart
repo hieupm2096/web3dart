@@ -182,6 +182,16 @@ class Web3Client {
         .then((s) => hexToInt(s).toInt());
   }
 
+  /// Returns information about a block by block number.
+  Future<Block> getBlockByNumber(BlockNum atBlock,
+      {bool fullTransaction = true}) {
+    final blockParam = _getBlockParam(atBlock);
+
+    return _makeRPCCall<Map<String, dynamic>>(
+            'eth_getBlockByNumber', [blockParam, fullTransaction])
+        .then((data) => Block.fromMap(data));
+  }
+
   /// Gets the balance of the account with the specified address.
   ///
   /// This function allows specifying a custom block mined in the past to get

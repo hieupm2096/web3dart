@@ -3,6 +3,7 @@ library web3dart;
 import 'dart:async';
 import 'dart:typed_data';
 
+import 'package:code_builder/code_builder.dart';
 import 'package:collection/collection.dart';
 import 'package:http/http.dart';
 import 'package:json_rpc_2/json_rpc_2.dart' as rpc;
@@ -32,3 +33,4 @@ part 'src/core/filters.dart';
 part 'src/core/transaction.dart';
 part 'src/core/transaction_information.dart';
 part 'src/core/transaction_signer.dart';
+part 'src/core/block.dart';
